@@ -4,10 +4,7 @@ import bcrypt from 'bcrypt' // import bcrypt to hash password and compare hashed
 import jwt from 'jsonwebtoken' // import jwt to encript a block of code
 
 export function createUser(req,res){
-
     
-    
-
     //hashed user's input password
     const passwordHash = bcrypt.hashSync(req.body.password, 10)
 
