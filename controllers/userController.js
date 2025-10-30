@@ -10,8 +10,17 @@ export function createUser(req,res){
 
     //hashed user's input password
     const passwordHash = bcrypt.hashSync(req.body.password, 10)
-    
-     const userData = {
+
+    if(req.body.role=="admin"){
+        if(req.user.role !="admin"){
+            res.status(403).json({
+                message : "Only admin can create another admin user!"
+            })
+            return
+        }
+    }
+
+    const userData = {
         firstName : req.body.firstName,
         lastName : req.body.lastName,
         email : req.body.email,
