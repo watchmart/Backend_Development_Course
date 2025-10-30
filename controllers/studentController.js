@@ -1,6 +1,6 @@
 import Student from "../models/student.js"
 
-export function getStudentsSync (req, res){
+/* export function getStudentsSync (req, res){
     Student.find().then(
         (students)=>{
             res.json(students)
@@ -12,7 +12,7 @@ export function getStudentsSync (req, res){
             })
         }
     )
-}
+} */
 
 export async function getStudents(req,res) {
     try{
